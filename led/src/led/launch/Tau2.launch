@@ -1,0 +1,19 @@
+<launch>
+
+
+
+	<node name="flir_tau2_aravis" pkg="amt_ros_sensors_ir_variocamhd_infratec" type="camnode" output="screen" respawn="true" respawn_delay="10">
+	<param name="/TestPattern" value="Off"/>
+	<param name="/PixelFormat" value="Mono16"/>
+	<param name="/GevSCPSPacketSize" value="9000"/>
+	<remap from="/amt/ir/flir_tau2_aravis/image_raw" to="/amt/ir/flir_tau2/image1"/>
+	</node>
+
+        <node pkg="led" type="led" name="blink_led1" output="screen" respawn="true" respawn_delay="10" launch-prefix="sudo -E"/>
+
+	<node pkg="amt_camera_isalive" type="amt_camera_isalive_node" name="amt_camera_isalive_node" output="screen" respawn="true" respawn_delay="10"/>
+
+
+
+		
+</launch>

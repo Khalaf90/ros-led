@@ -1,7 +1,7 @@
 #include "ros/ros.h"
 #include "std_msgs/Bool.h"
 #include "std_msgs/String.h"
-#include <iostream>
+
 #include "wiringPi.h"
 
 //Wiring PI 1
@@ -25,11 +25,11 @@ void blink_callback(const std_msgs::Bool::ConstPtr& msg)
              //ROS_INFO("/begin_write being published");
          }
 
-		else if  (sub1.getNumPublishers() == 0) // shutting down the recording node
-		 {
-             is_recording=false;
+else if  (sub1.getNumPublishers() == 0) // shutting down the recording node
+    {
+            is_recording=false;
              //ROS_INFO("/begin_write stop being published");
-		 }
+    }
 
 
   if(( msg->data == 1) && ( is_recording==true)) 
@@ -42,9 +42,9 @@ void blink_callback(const std_msgs::Bool::ConstPtr& msg)
   else if(( msg->data == 1) && ( is_recording==false))
     {
      	  digitalWrite (LED, HIGH) ;
-		  ros::Duration(1.0).sleep();	//delay(1000);
+    	  delay(1000);
      	  digitalWrite (LED, LOW) ;
-      	  ros::Duration(1.0).sleep();   //delay(1000);
+      	  delay(1000);
 
     	  //ROS_INFO("LED Blink");
     }
