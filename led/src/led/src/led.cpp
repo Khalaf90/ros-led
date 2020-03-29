@@ -42,9 +42,9 @@ else if  (sub1.getNumPublishers() == 0) // shutting down the recording node
   else if(( msg->data == 1) && ( is_recording==false))
     {
      	  digitalWrite (LED, HIGH) ;
-    	  delay(1000);
+    	  ros::Duration(1.0).sleep(); //delay(1000);
      	  digitalWrite (LED, LOW) ;
-      	  delay(1000);
+      	  ros::Duration(1.0).sleep(); //delay(1000);
 
     	  //ROS_INFO("LED Blink");
     }
