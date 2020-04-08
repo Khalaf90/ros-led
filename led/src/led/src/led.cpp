@@ -63,7 +63,7 @@ int main(int argc, char** argv)
 {
     ros::init(argc, argv,"blink_led1");
     ROS_INFO("Started Cam_1 Blink Node");
-    wiringPiSetup ();
+    wiringPiSetup();
     pinMode(LED, OUTPUT);
     ros::NodeHandle n;
 
