@@ -55,8 +55,11 @@ else if ( msg->data == 0)
      	 digitalWrite (LED, LOW) ;
       	 //ROS_INFO("LED OFF");
     }
-
-}
+ 
+else 
+ {
+    // Do nothing
+ }
 
 
 int main(int argc, char** argv)
